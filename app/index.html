@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web Starter Kit</title>
+    <title>Hawk Creek Church</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -28,6 +28,7 @@
 
     <!-- Page styles -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
   <body>
     <div id="container">
@@ -35,7 +36,7 @@
         <div class="app-bar-container">
           <button class="menu"><img src="images/hamburger.svg" alt="Menu"></button>
           <h1 class="logo">Hawk <strong>Creek</strong> Church</h1>
-          <img src="images/HCC_Logo_transp.png" />
+          <img class="logo-img" src="images/HCC_Logo_transp.png" />
           <section class="app-bar-actions">
           <!-- Put App Bar Buttons Here -->
           <!-- e.g <button><i class="icon icon-star"></i></button> -->
@@ -46,25 +47,72 @@
       <nav class="navdrawer-container promote-layer">
         <h4>Navigation</h4>
         <ul>
-          <li class="menu-first"><a href="#hello">New Here?</a></li>
-          <li><a href="#get-started">Next Steps</a></li>
-          <li><a href="styleguide.html">Ministries</a></li>
-          <li><a href="styleguide.html">Resources</a></li>
+          <li class="menu-first children"><a href="#hello">New Here? <i class="fa fa-caret-down" style="font-size: 16px;"></i></a>
+          <ul class="sub-menu">
+            <li id="menu-item-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46"><a href="http://hawkcreekchurch.com/location-service-times">Services &amp; Locations</a></li>
+            <li id="menu-item-95" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95"><a href="http://hawkcreekchurch.com/what-to-expect">What To Expect</a></li>
+            <li id="menu-item-94" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-94"><a href="http://hawkcreekchurch.com/our-story">Our Story</a></li>
+            <li id="menu-item-302" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-302"><a href="http://hawkcreekchurch.com/our-mission-vision">Our Mission &amp; Vision</a></li>
+            <li id="menu-item-93" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93"><a href="http://hawkcreekchurch.com/our-beliefs">Our Beliefs</a></li>
+            <li id="menu-item-92" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-92"><a href="http://hawkcreekchurch.com/the-team">Our Staff</a></li>
+          </ul>
+          
+          </li>
+          <li><a href="#get-started">Next Steps <i class="fa fa-caret-down" style="font-size: 16px;"></i></a></li>
+          <li><a href="styleguide.html">Ministries <i class="fa fa-caret-down" style="font-size: 16px;"></i></a></li>
+          <li><a href="styleguide.html">Resources <i class="fa fa-caret-down" style="font-size: 16px;"></i></a></li>
           <li><a href="styleguide.html">Give</a></li>
           <li><a href="styleguide.html">Somerset Campus</a></li>
-          <li><form class="search-box"><input type="text"></input></form></li>
+          <li class="search-box"><form><input type="text"></input><button type="submit" class="search-button"><i class="fa fa-search"></i></button></form></li>
         </ul>
 
       </nav>
 
+      
       <main>
-        <h1 id="hello">Hello!</h1>
-        <p>Welcome to Web Starter Kit.</p>
-
-        <h2 id="get-started">Get Started.</h2>
-        <p>Read how to <a href="http://developers.google.com/web/starter-kit">Get Started</a> or check out the <a href="styleguide.html">Style Guide</a>.</p>
+        <div class="main">
+          <ul class="slider">
+              <li><img src="images/banner1.png" /></li>
+              <li><img src="images/banner2.png" /></li>
+              <li><img src="images/banner3.png" /></li>
+          </ul>
+        </div>
+        <div class="activities home-box">
+          <h2>Weekly Activities</h2>
+          <strong>Hawk Creek London</strong><br />
+          Sunday Services - @ 9:30AM / 11:15AM <br />
+          HC Kids - Sun @ 9:30AM / 11:15AM <br />
+          Fusion Students - Wed @ 6:30PM <br />
+          Celebrate Recovery - Tues @ 6:00PM <br />
+          <br />
+          <strong>Hawk Creek Somerset</strong><br />
+          Sunday Service - Sun @ 10:00AM <br />
+          HC Kids - Sun @ 10:00AM <br />
+          Fusion Students - Wed @ 6:30PM <br />
+        </div>
+        <div class="locations home-box">
+          <h2>Our Locations</h2>
+          <strong>Hawk Creek London</strong><br />
+          75 Capital Drive<br />
+          London, KY 40741<br />
+          (Off Industrial Blvd / Hwy 80 West)<br />
+          Phone: 606.877.9682<br />
+          <br />
+          <strong>Hawk Creek Somerset</strong><br />
+          The Center for Rural Development<br />
+          2292 South Highway 27<br />
+          Somerset, KY 42501<br />
+          Phone: 606.877.9682<br />
+        </div>
+        <div class="connect home-box">
+          <h2>Stay Connected</h2>
+          Stay up with the latest news at The Creek by following us on Facebook and Twitter.
+        </div>
+      
       </main>
-
+      <footer>
+        &copy;2015 Hawk Creek Church - <a href="mailto:contact@hawkcreekchurch.com">contact@hawkcreekchurch.com</a>
+      </footer>
       <!-- build:js scripts/main.min.js -->
       <script src="scripts/main.js"></script>
       <!-- endbuild -->

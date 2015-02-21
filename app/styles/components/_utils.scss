@@ -56,8 +56,8 @@
   $colorPerformanceSecondary: lighten($colorPerformance, 30%) !default;
 
   // Defining font family
-  $fontDefault: Helvetica, Arial, sans-serif !default;
-  $fontHighlight: 'Roboto Condensed', Helvetica, sans-serif !default;
+  $fontDefault: 'HelveticaNeue', 'Helvetica Neue', 'HelveticaNeueRoman', 'HelveticaNeue-Roman', 'Helvetica Neue Roman', 'TeXGyreHerosRegular', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;;
+  $fontHighlight: $fontDefault;
   $fontIcon: 'icons' !default;
 
   // Defining font sizes
@@ -65,7 +65,7 @@
   $fontBase: 16px  !default;
   $fontMedium: 20px !default;
   $fontLarge: 26px !default;
-  $fontXLarge: 42px !default;
+  $fontXLarge: 22px !default;
   $fontXXLarge: 68px !default;
   $fontHuge: 110px !default;
 

@@ -13,6 +13,11 @@
  */
 @import 'components/components';
 
+$hc-blue:#1B9BE3;
+$off-white:#fefefe;
+$dark-gray:#212121;
+$light-gray:#aaa;
+
 html,
 body {
   width: 100%;
@@ -28,7 +33,7 @@ body {
   background-color: #fff;
   box-sizing: border-box;
   min-height: 100%;
-    background-color: #212121;
+    background-color: $dark-gray;
 
 }
 
@@ -42,7 +47,7 @@ body.open {
   position: fixed;
   top: 0;
   left: 0;
-  overflow: hidden;
+  /*overflow: hidden;*/
   z-index: 1;
 
   h1{
@@ -66,6 +71,8 @@ body.open {
       -ms-flex-direction: row;
           flex-direction: row;
   margin: 0 auto;
+  background-color: $dark-gray;
+  background: linear-gradient(#424242 4.5%, #363636);
 }
 
 .app-bar.open,
@@ -89,6 +96,10 @@ body.open {
   display: initial;
 }
 
+.app-bar .logo-img{
+  padding-left:10px;
+}
+
 .app-bar .logo a {
   text-decoration: none;
   color: inherit;
@@ -109,7 +120,7 @@ body.open {
   width: 60px;
   height: 60px;
   background-image: none;
-  background-color: transparent;
+  background-color: $light-gray;
   border: none;
   padding: 0;
   display: inline-block;
@@ -150,18 +161,33 @@ body.open {
 }
 
 .search-box{
+  width: 260px;
+}
+.search-box form{
   padding:9px;
-  width:100%;
+  padding-left:14px;
+  padding-right: 30px;
+
   border: 1px solid #4f4f4f;
   input[type="text"]{
     border: 1px solid rgb(41, 41, 41);
     background-color:transparent;
     background-color:#3a3a3a;
 
-    width:120px;
+    width:100%;
     height:100%;
+    padding-left: 5px;
+    padding-right: 30px;
   }
 }
+
+ .search-button{
+    background: transparent;
+    border: none;
+    color: #999;
+    font-size: 18px;
+    margin-left: -30px;
+  }
 
 .base,
 p,
@@ -178,13 +204,24 @@ ol {
   width: 250px;
   height: 100%;
   background-color: #3367D6;
+  border-right: 6px solid $off-white;
   background: linear-gradient(#424242 4.5%, #363636);
-    /*background-color: green;*/
 
   color: #fefefe;
   -webkit-transform: translate(-250px, 0);
           transform: translate(-250px, 0);
-  overflow-y: auto;
+  overflow-y: visible;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+      text-transform: uppercase;
+  a, label{
+      
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing:.5px;
+      line-height:13px;
+      color:#cecece;
+      padding-left:0px;
+    }
 }
 
 .navdrawer-container.open {
@@ -202,14 +239,15 @@ main {
 .navdrawer-container h4,
 .navdrawer-container ul li a {
   height: 50px;
-  padding: 17px 20px;
+  padding: 14px 14px; 
   line-height: 1.4;
-
+  
 }
 
 .navdrawer-container h4 {
   background-color: white;
-  color: #3367D6;
+  background-color: $hc-blue;
+  text-transform: uppercase;
 }
 
 .navdrawer-container ul {
@@ -239,8 +277,26 @@ main {
   content: none;
 }
 
+.navdrawer-container ul ul.sub-menu{
+  display: none;
+  position:relative;
+  z-index: 100;
+  background: linear-gradient(#545454 4.5%, #484848);
+  a{
+    font-size:11px;
+    padding:8px;
+    padding-left:20px;
+    padding-right:15px;
+    height: auto;
+    text-transform: none;
+  }
+}
 .navdrawer-container ul li a:hover {
   background: linear-gradient(#2a2a2a 4.5%, #343434)
+}
+
+.navdrawer-container ul li:hover .sub-menu {
+  display: block;
 }
 
 .navdrawer-container ul li a:focus {
@@ -257,13 +313,96 @@ main {
   /* Height of the header */
   padding: 60px 16px 16px 16px;
   min-height: 100%;
+  background-color: white;
+  display: -webkit-flex;
+  display: flex;
+    flex-flow: row wrap;
+
+}
+
+.home-box{
+  flex:1;
+  min-width: 275px;
+  margin:5px;
+  font-size:15px;
+  line-height: 18px;
+  border-top: 10px solid $light-gray;
+}
+
+
+.slider{
+  padding: 10px;
+  margin-right: -10px;
+ 
+}
+
+.slider li{
+  padding:0px;
+  margin-bottom: 10px;
+}
+.slider li::before{
+  content: none;
+}
+
+.slider{
+  display: flex;
+  flex-flow: wrap;
+}
+
+.slider li{
+  flex:1;
+  min-width: 200px;
+  margin-right: 10px;
+}
+.slider li:first-child{
+  min-width: 80%;
+  flex:2;
+}
+
+footer
+{
+  background-color: #1C1C1C;
+  background-color: $dark-gray;
+  background: linear-gradient(#2a2a2a 4.5%, #343434);
+  color: #999;
+  margin-bottom: 100px;
+  text-align: center;
+  vertical-align: middle;
+  padding-top:21px;
+  padding-bottom:21px;
+  border-radius: 0 0 5px 5px;
+  font-size:14px;
+  a{
+    color: $hc-blue;
+    text-decoration: none;
+  }
+}
+
+@media all and (min-width: 602px) {
+  .home-box{
+    border-top: none;
+  }
 }
 
 /** Larger Screens - desktops and tablets **/
-@media all and (min-width: 962px) {
+/****************************************************************************************/
+/****************************************************************************************/
+/****************************************************************************************/
+@media all and (min-width: 962px) { /*962*/
   .app-bar {
     position: relative;
 
+  }
+  .navdrawer-container ul ul.sub-menu{
+    display: none;
+    position:absolute;
+    z-index: 100;
+    background: linear-gradient(#424242 4.5%, #363636);
+    li a{
+      padding-left:8px;
+      border-radius: 0px;
+      border-width: 1px 0 1px 0;
+    }
   }
 
   #container{
@@ -275,14 +414,20 @@ main {
     -webkit-transform: translate(0px, 0);
             transform: translate(0px, 0);
   }
+  
+  .search-box label{
+    display: none;
+  }
+  
+ 
 
   .app-bar-container {
     display: block;
     height: 130px;
-    max-width: 864px;
-    padding: 0 16px;
-    box-sizing: border-box;
     
+    padding: 0;
+    box-sizing: border-box;
+    background: transparent;
   }
 
   .app-bar .logo {
@@ -291,6 +436,10 @@ main {
     padding: 0;
     line-height: 130px;
     font-size: 46px;
+  }
+  .app-bar .logo-img {
+        margin-top:35px;
+        width:auto;
   }
 
   .app-bar-actions {
@@ -318,18 +467,11 @@ main {
             transform: translate(0, 0);
     -webkit-transition: none;
             transition: none;
-    overflow-y: auto;
+    overflow-y: visible;
     border: .5px solid #4f4f4f;
     border-radius: 6px 6px 0 0;
 
-    a{
-      font-family: Arial, Verdana, Helvetica, sans-serif;
-      text-transform: uppercase;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing:.5px;
-      line-height:13px;
-    }
+    
   }
 
   .navdrawer-container h4 {
@@ -359,7 +501,6 @@ main {
 
   .navdrawer-container ul li:last-child {
     border: none;
-    width:200px;
 
     form{
       border-radius: 0 6px 0 0;
@@ -367,9 +508,13 @@ main {
   }
 
   main {
-    max-width: 864px;
-    padding-top: 0;
+    padding-top: 10px;
     min-height: initial;
+  }
+  
+  footer{
+      box-shadow: 0px 20px 17px -10px rgba(0,0,0,0.75);
+
   }
 
   body {
@@ -377,50 +522,3 @@ main {
   }
 }
 
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: normal;
-  font-weight: 300;
-  src: url(/fonts/RobotoCondensed-Light.eot);
-  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'), url(/fonts/RobotoCondensed-Light.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Light.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: normal;
-  font-weight: 400;
-  src: url(/fonts/RobotoCondensed-Regular.eot);
-  src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url(/fonts/RobotoCondensed-Regular.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Regular.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: normal;
-  font-weight: 700;
-  src: url(/fonts/RobotoCondensed-Bold.eot);
-  src: local('Roboto Condensed Regular'), local('RobotoCondensed-Bold'), url(/fonts/RobotoCondensed-Bold.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Bold.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: italic;
-  font-weight: 300;
-  src: url(/fonts/RobotoCondensed-LightItalic.eot);
-  src: local('Roboto Condensed Light Italic'), local('RobotoCondensed-LightItalic'), url(/fonts/RobotoCondensed-LightItalic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-LightItalic.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: italic;
-  font-weight: 400;
-  src: url(/fonts/RobotoCondensed-Italic.eot);
-  src: local('Roboto Condensed Italic'), local('RobotoCondensed-Italic'), url(/fonts/RobotoCondensed-Italic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Italic.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: italic;
-  font-weight: 700;
-  src: url(/fonts/RobotoCondensed-BoldItalic.eot);
-  src: local('Roboto Condensed Bold Italic'), local('RobotoCondensed-BoldItalic'), url(/fonts/RobotoCondensed-BoldItalic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-BoldItalic.woff) format('woff');
-}

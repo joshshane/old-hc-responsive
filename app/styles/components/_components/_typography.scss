@@ -4,6 +4,10 @@
 *
 **/
 
+body{
+  font-family: 'HelveticaNeue', 'Helvetica Neue', 'HelveticaNeueRoman', 'HelveticaNeue-Roman', 'Helvetica Neue Roman', 'TeXGyreHerosRegular', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
+}
+
 // Just normalizing text
 // Recommend using padding instead of margin
 h1, h2, h3, h4, h5, p {
@@ -35,6 +39,7 @@ h3 {
 .xlarge,
 h2 {
   @include type--xlarge;
+  margin-bottom:15px;
 }
 
 .xxlarge,
