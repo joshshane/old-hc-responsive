@@ -256,7 +256,7 @@ main {
   list-style-type: none;
 }
 
-.navdrawer-container ul li a {
+.navdrawer-container ul li a, .navdrawer-container ul li a.active  {
   display: block;
   text-decoration: none;
   color: rgb(206, 206, 206);
@@ -277,7 +277,15 @@ main {
   content: none;
 }
 
-.navdrawer-container ul ul.sub-menu{
+.navdrawer-container ul li.expanded{
+  list-style: none;
+}
+
+.navdrawer-container ul li.expanded > a::after{
+  content: " \f0d7";
+  font-family: FontAwesome;
+}
+.navdrawer-container ul ul.sub-menu, .navdrawer-container ul li.expanded ul{
   display: none;
   position:relative;
   z-index: 100;
@@ -295,7 +303,7 @@ main {
   background: linear-gradient(#2a2a2a 4.5%, #343434)
 }
 
-.navdrawer-container ul li:hover .sub-menu {
+.navdrawer-container ul li:hover .sub-menu, .navdrawer-container ul li.expanded:hover ul {
   display: block;
 }
 
@@ -394,7 +402,7 @@ footer
     position: relative;
 
   }
-  .navdrawer-container ul ul.sub-menu{
+  .navdrawer-container ul ul.sub-menu, .navdrawer-container ul li.expanded ul{
     display: none;
     position:absolute;
     z-index: 100;
@@ -493,7 +501,7 @@ footer
   .navdrawer-container ul li {
     border: none;
     border-right: 1px solid #000;
-
+    
   }
 
   .navdrawer-container ul li:first-child a {
@@ -509,7 +517,7 @@ footer
   }
 
   .search-box{
-    width: 260px;
+    /*width: 260px;*/
   }
 
   main {
