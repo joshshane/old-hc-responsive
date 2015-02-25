@@ -161,7 +161,7 @@ body.open {
 }
 
 .search-box{
-  width: 260px;
+  width: 100%;
 }
 .search-box form{
   padding:9px;
@@ -172,7 +172,7 @@ body.open {
   input[type="text"]{
     border: 1px solid rgb(41, 41, 41);
     background-color:transparent;
-    background-color:#3a3a3a;
+    background-color:#4a4a4a;
 
     width:100%;
     height:100%;
@@ -506,6 +506,10 @@ footer
     form{
       border-radius: 0 6px 0 0;
     }
+  }
+
+  .search-box{
+    width: 260px;
   }
 
   main {
